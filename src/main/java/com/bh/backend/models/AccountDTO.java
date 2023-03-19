@@ -4,8 +4,8 @@ import java.util.Set;
 
 public class AccountDTO {
 
-    private int accountID;
-    private int customerID;
+    private int accountId;
+    private int customerId;
     private double balance;
     private Set<TransactionDTO> transactions;
 }
