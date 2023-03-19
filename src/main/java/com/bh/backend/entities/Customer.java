@@ -19,5 +19,37 @@ public class Customer extends PanacheEntityBase {
     @Column(name = "surname")
     private String surname;
     @OneToMany(mappedBy = "customerId", fetch = FetchType.EAGER)
-    private Set<Account> accountSet;
+    private Set<Account> accounts;
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
+    }
 }
