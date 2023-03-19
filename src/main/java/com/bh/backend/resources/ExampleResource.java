@@ -1,4 +1,4 @@
-package com.bh.backend;
+package com.bh.backend.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
