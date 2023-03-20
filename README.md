@@ -1,14 +1,24 @@
 # bh-backend
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## Running the application in dev mode
+## Database
 
+For this project we use H2 which is an embedded, open-source, and in-memory database. 
+It is a relational database management system written in Java. It is a client/server application. 
+It stores data in memory, not persist the data on disk.
+here some documentation about [H2](https://www.h2database.com/html/main.html)
+
+Here the database model :
+![Database Model](doc/db_schema.png)
+
+
+## Running the application in dev mode
 You can run your application in dev mode that enables live coding using:
 
 ```shell script
+mvn clean install
 ./mvnw compile quarkus:dev
 ```
 
