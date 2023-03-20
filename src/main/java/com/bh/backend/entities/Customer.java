@@ -11,7 +11,7 @@ public class Customer extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
-    private int customerId;
+    private Integer customerId;
     @NotNull
     @Column(name = "name")
     private String name;
@@ -21,11 +21,11 @@ public class Customer extends PanacheEntityBase {
     @OneToMany(mappedBy = "customerId", fetch = FetchType.EAGER)
     private Set<Account> accounts;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
