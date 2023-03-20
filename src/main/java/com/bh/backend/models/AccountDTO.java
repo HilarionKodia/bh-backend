@@ -4,32 +4,23 @@ import java.util.Set;
 
 public class AccountDTO {
 
-    private int accountId;
-    private int customerId;
-    private double balance;
+    private Integer accountId;
+    private Double balance;
     private Set<TransactionDTO> transactions;
 
-    public int getAccountId() {
+    public Integer getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccountId(Integer accountId) {
         this.accountId = accountId;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public double getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 

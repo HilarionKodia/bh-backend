@@ -4,16 +4,16 @@ import java.util.Set;
 
 public class CustomerDTO {
 
-    private int customerId;
+    private Integer customerId;
     private String name;
     private String surname;
     private Set<AccountDTO> accounts;
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
