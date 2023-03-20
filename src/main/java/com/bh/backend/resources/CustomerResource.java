@@ -1,8 +1,10 @@
 package com.bh.backend.resources;
 
+import com.bh.backend.entities.Account;
+import com.bh.backend.entities.Customer;
 import com.bh.backend.mappers.CustomerMapper;
 import com.bh.backend.models.CustomerDTO;
-import com.bh.backend.services.CustomerService;
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -26,16 +28,13 @@ public class CustomerResource {
     private static final Logger LOGGER = Logger.getLogger(CustomerResource.class.getName());
 
     @Inject
-    CustomerService customerService;
-
-    @Inject
     CustomerMapper customerMapper;
 
     @GET
     @Path("")
     public Response getAllCustomers() {
         try{
-            List<CustomerDTO> customers= customerMapper.toCustomerDTOList(customerService.get());
+            List<CustomerDTO> customers= customerMapper.toCustomerDTOList(Customer.listAll());
             if (customers.isEmpty()) {
                 return Response.noContent().build();
             } else {
@@ -45,6 +44,21 @@ public class CustomerResource {
             LOGGER.severe(e.getMessage());
             return Response.serverError().build();
         }
+    }
 
+    @GET
+    @Path("/{customerID}")
+    public Response getCustomerByCustomerId(@PathParam Integer customerID) {
+        try{
+            Customer customer = Customer.findById(customerID);
+            if (customer == null) {
+                return Response.noContent().build();
+            } else {
+                return Response.ok(customerMapper.toCustomerDTO(customer)).build();
+            }
+        } catch (Exception e) {
+            LOGGER.severe(e.getMessage());
+            return Response.serverError().build();
+        }
     }
 }
