@@ -4,8 +4,10 @@ import com.bh.backend.entities.Account;
 import com.bh.backend.models.UserInfoDTO;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 
 @ApplicationScoped
+@Transactional
 public class AccountService  {
 
     public Account openNewAccount (UserInfoDTO userInfo) {
