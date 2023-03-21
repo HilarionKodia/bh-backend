@@ -101,7 +101,7 @@ curl --location --request GET 'http://localhost:8080/customer'
 ### Get Customer by customerID
 
 ```shell
-curl --location --request GET 'http://localhost:8080/customer/1'
+curl --location --request GET 'http://localhost:8080/customer/id?customerid=1'
 ```
 
 ### Open a New Account
