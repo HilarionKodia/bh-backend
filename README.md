@@ -29,6 +29,12 @@ this means the content is lost. To keep the database open, we added **DB_CLOSE_D
 To initialise the database with the sql script **db_script.sql** we added **INIT=RUNSCRIPT FROM 'classpath:db_script.sql'**
 This script create the required tables and insert a few users in the Customer table.
 
+## How to run the tests
+
+```shell
+./mvnw clean test
+```
+
 ## How to Run the application in dev mode
 You can run your application in dev mode that enables live coding using:
 
