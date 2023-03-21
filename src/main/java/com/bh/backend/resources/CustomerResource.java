@@ -9,10 +9,7 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
@@ -47,8 +44,8 @@ public class CustomerResource {
     }
 
     @GET
-    @Path("/{customerID}")
-    public Response getCustomerByCustomerId(@PathParam Integer customerID) {
+    @Path("/id")
+    public Response getCustomerByCustomerId(@QueryParam("customerid") Integer customerID) {
         try{
             Customer customer = Customer.findById(customerID);
             if (customer == null) {
